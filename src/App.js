@@ -8,7 +8,8 @@ class App extends Component {
         persons: [
             { name: 'José', age: 25 },
             { name: 'Carla', age: 25 },
-            { name: 'Ramón', age: 29 }
+            { name: 'Ramón', age: 29 },
+            { name: 'Mario', age: 26 }
         ],
         otherState: 'some other value',
         showPersons: false
@@ -57,17 +58,12 @@ class App extends Component {
         if (this.state.showPersons) {
             persons = (
                 <div >
-                    <Person
-                        name={this.state.persons[0].name}
-                        age={this.state.persons[0].age} />
-                    <Person
-                        name={this.state.persons[1].name}
-                        age={this.state.persons[1].age}
-                        click={this.switchNameHandler.bind(this, 'Carla')}
-                        changed={this.nameChangedHandler}>My Hobbies: Racing </Person>
-                    <Person
-                        name={this.state.persons[2].name}
-                        age={this.state.persons[2].age} />
+                    {this.state.persons.map(person => {
+                        return <Person
+                            name={person.name}
+                            age={person.age} />
+                    })}
+
                 </div>
             );
         }
