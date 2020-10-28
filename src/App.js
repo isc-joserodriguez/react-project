@@ -20,7 +20,6 @@ class App extends Component {
         const personIndex = this.state.persons.findIndex(p => {
             return p.id === id;
         });
-        console.log(personIndex);
 
         const person = {
             ...this.state.persons[personIndex]
@@ -48,7 +47,8 @@ class App extends Component {
     //ADD render (){return JSX};
     render() {
         const style = {
-            backgroundColor: 'white',
+            backgroundColor: 'green',
+            color: 'white',
             font: 'inherit',
             border: '1px solid blue',
             padding: '8px',
@@ -71,6 +71,7 @@ class App extends Component {
 
                 </div>
             );
+            style.backgroundColor='red';
         }
 
         return (
