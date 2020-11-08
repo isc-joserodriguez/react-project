@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Person.module.css';
 
 const person = (props) => {
-    if (Math.random() > 0.7) {
+    if (Math.random() < 0.1) {
         throw new Error('Something went wrong');
     }
     return (
