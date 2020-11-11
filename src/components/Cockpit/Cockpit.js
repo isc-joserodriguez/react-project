@@ -1,14 +1,25 @@
 import React, { useEffect } from 'react';
 import classes from './Cockpit.module.css'
 
-const cockpit = (props) => {
+const Cockpit = (props) => {
     useEffect(() => {
         console.log('[Cockpit.js useEffect');
         //Http request...
         setTimeout(() => {
             alert('Save data to cloud!');
         }, 1000);
+        return () => {
+            console.log('[Cockpit.js] cleanup work in useEffect');
+        };
     }, []);
+
+    useEffect(() => {
+        console.log('[Cockpit.js 2nd useEffect');
+        //Http request...
+        return () => {
+            console.log('[Cockpit.js] cleanup work in 2nd useEffect');
+        };
+    });
 
     //useEffect();
     const assignedClasses = [];
@@ -35,4 +46,4 @@ const cockpit = (props) => {
     );
 };
 
-export default cockpit
+export default Cockpit
