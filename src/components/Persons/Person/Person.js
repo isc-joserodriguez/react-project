@@ -4,7 +4,7 @@ import classes from './Person.module.css';
 class Person extends Component {
     render() {
         if (Math.random() < 0.1) {
-            throw new Error('Something went wrong');
+            //throw new Error('Something went wrong');
         }
         console.log('[Person.js] rendering...')
         return (
